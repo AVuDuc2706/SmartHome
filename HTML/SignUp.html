@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../CSS/styles.css">
+  <title>Sign Up</title>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="../JS/Script.js"></script>
+</head>
+<body onload="check()">
+    <header>
+        <div class="siderbar">
+          <h1>SMART HOME</h1>
+            <ul>
+                <li><a href="./Home.html">Home</a></li>
+                <li><a href="./Contact.html">Contact</a></li>
+                <li><a href="./Login.html">Login</a></li>
+                <li><a href="./SignUp.html">Sign Up</a></li>
+            </ul>
+      </div> 
+    </header>
+    <div class="signup">
+        <h1>Sign Up</h1>
+        <form>
+            <p>User name</p>
+            <input id='username' placeholder="Enter username" type="text">
+            <p>Password</p>
+            <input id='password' placeholder="Enter password" type="password">
+            <p>Name</p>
+            <input id='name' placeholder="Enter name" type="text">
+            <p>Gender</p>
+            <input id='gender' placeholder="Enter gender" type="text">
+            <p>Sensor</p>
+            <input id='sensor' placeholder="Enter sensor" type="text">
+            <p>Status</p>
+            <input id='status' placeholder="Enter status" type="text">
+            <br>             
+            <button type="button" onclick='signup()'>Sign Up</button><br>
+        </form>
+    </div>
+    <script>
+        function signup(){
+            var newuser = {
+                user:document.getElementById("username").value,
+                pass: document.getElementById("password").value,
+                name: document.getElementById("name").value,
+                gender: document.getElementById("gender").value,
+                sensor: document.getElementById("sensor").value,
+                Status: document.getElementById("status").value,
+            };
+            if(newuser.user==''||newuser.pass==''||newuser.name==''||newuser.gender==''||newuser.sensor==''||newuser.Status==''){
+                alert('Enter missing');
+            }else{
+                axios.post('https://cors-anywhere.herokuapp.com/http://apithcntt03.gear.host/api/CreateAccount', newuser).then((response) => {
+                    var result = response.data;
+                    if (result) {
+                        alert('Create Success');
+                    } else {
+                        alert('Create faile');
+                    }
+                });
+            }
+        }
+    </script>
+</body>
+</html>

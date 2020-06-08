@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../CSS/styles.css">
+  <title>Login</title>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="../JS/Script.js"></script>
+</head>
+<body onload="check()">
+  <header>
+    <div class="siderbar">
+      <h1>SMART HOME</h1>
+        <ul>
+          <li><a href="./Home.html">Home</a></li>
+          <li><a href="./Contact.html">Contact</a></li>
+          <li><a href="./Login.html">Login</a></li>
+          <li><a href="./SignUp.html">Sign Up</a></li>
+        </ul>
+  </div> 
+  </header>
+  <div class="login">
+    <h1>Login</h1>
+    <form>
+        <p>User name</p>
+        <input id='username' placeholder="Enter username" type="text">
+        <p>Password</p>
+        <input id='password' placeholder="Enter password" type="password">
+        <br>             
+        <button type="button" onclick='login()'>LogIn</button><br>       
+    </form>
+  </div>  
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/styles.css">
+    <title>Status</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="../JS/Script.js"></script>
+  <script src="../JS/Getrealtime.js"></script>
+
+</head>
+<body onload="userinfo()" onload="check()">
+  <header>
+    <div class="siderbar">
+        <h1>SMART HOME</h1>
+        <ul>
+            <li><a href="./Home.html">Home</a></li>
+            <li><a href="./Contact.html">Contact</a></li>
+            <li><a href="./Login.html">Login</a></li>
+            <li><a href="./SignUp.html">Sign Up</a></li>
+        </ul>
+    </div>
+  </header>
+  <div class="userinfo">
+    <h1>User Info</h1>
+    <form>
+      <p>User name: <span id="userinfo"></span></p>
+      <span id="userinfo"></span>     
+      <br>             
+      <button type="button" onclick='logout()'>LogOut</button><br>       
+  </form>
+  </div>
+  <div class="status">
+    <h1>Status</h1>
+    <form>       
+        <button type="button" onclick="getstatus()">Status</button>
+        <table id="status" border="1" ></table>
+    </form>
+  </div>
+</body>
+</html>
